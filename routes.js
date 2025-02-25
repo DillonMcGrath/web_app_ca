@@ -1,7 +1,7 @@
 'use strict';
 
 import express from 'express';
-import logger from "./utils/logger.js";
+import logger from "./utils/logge";
 
 const router = express.Router();
 
