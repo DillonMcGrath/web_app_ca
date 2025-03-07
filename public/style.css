@@ -114,3 +114,15 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.clickable-image {
+    display: block;
+    margin: 20px auto; /* Centers it */
+    width: 200px; /* changes the size */
+    cursor: pointer; /* Makes it clearer that it's clickable */
+    transition: transform 0.2s ease-in-out;
+}
+
+.clickable-image:hover {
+    transform: scale(1.1); /* should give a slight zoom effect */
+}
