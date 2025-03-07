@@ -4,6 +4,8 @@
     { "brand": "Ford", "model": "Mustang", "year": 2022 },
     { "brand": "Chevrolet", "model": "Camaro", "year": 2021 },
     { "brand": "BMW", "model": "M3", "year": 2020 },
-    { "brand": "Audi", "model": "R8", "year": 2019 }
+    { "brand": "Audi", "model": "R8", "year": 2019 },
+    { "brand": "Toyota", "model": "Corolla", "year": 2020 },
+    { "brand": "Ford", "model": "Focus", "year": 2018 }
   ]
 }
