@@ -25,5 +25,8 @@ router.get("/page4", (req, res) => {
 router.get("/page5", (req, res) => {
   res.render("page5");
 });
+router.get("/page6", (req, res) => {
+  res.render("page6");
+});
 
 export default router;
