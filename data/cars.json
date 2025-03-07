@@ -1,0 +1,9 @@
+{
+  "cars": [
+    { "brand": "Tesla", "model": "Model S", "year": 2023 },
+    { "brand": "Ford", "model": "Mustang", "year": 2022 },
+    { "brand": "Chevrolet", "model": "Camaro", "year": 2021 },
+    { "brand": "BMW", "model": "M3", "year": 2020 },
+    { "brand": "Audi", "model": "R8", "year": 2019 }
+  ]
+}

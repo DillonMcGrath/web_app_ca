@@ -29,4 +29,15 @@ router.get("/page6", (req, res) => {
   res.render("page6");
 });
 
+
+
+import fs from 'fs';
+
+const carsData = JSON.parse(fs.readFileSync('./data/cars.json', 'utf8'));
+router.get("/page5", (req, res) => {
+  res.render("page5", { cars: carsData.cars });
+});
+
+
+
 export default router;

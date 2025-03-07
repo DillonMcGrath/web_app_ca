@@ -7,3 +7,9 @@
       
     </ul>
 </nav>
+<h1>Recent Cars </h1>
+<ul>
+  {{#each cars}}
+    <li><strong>{{brand}} {{model}}</strong> - Year: {{year}}</li>
+  {{/each}}
+</ul>
