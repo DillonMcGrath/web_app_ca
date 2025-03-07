@@ -169,27 +169,37 @@ img {
 
 /* Apply styles only to page 2 only */
 
-.page2-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows wrapping if needed */
-    justify-content: space-around; /* Spaces items evenly */
-    gap: 20px; /* Adds spacing between boxes */
-}
-
 .page2-box {
     display: flex;
-    flex-direction: column; /* Keeps image and text stacked */
-    align-items: center; /* Centers content */
-    width: 200px; /* Adjust width as needed */
+    flex-direction: row; /* Make image and text side by side */
+    align-items: center; /* Align them properly */
+    gap: 10px; /* Add spacing between image and text */
+    width: fit-content; /* Ensure it only takes up needed space */
 }
 
 .page2-box img {
-    width: 100%; /* Ensures images scale properly */
-    max-width: 200px; /* Limits image size */
+    width: 100px; /* Adjust as needed */
+    height: auto;
+    max-width: 100px;
 }
 
 .page2-text {
-    text-align: center; /* Centers text under image */
-    margin-top: 10px; /* Adds space between image and text */
+    text-align: left; /* Keep text aligned properly */
+}
+.page2-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to move to new row if needed */
+    justify-content: space-around; /* Distribute items evenly */
+    gap: 20px; /* Space between items */
+}
+.page2-box img {
+    width: 100px; /* Adjust as needed */
+    height: auto;
+    max-width: 100px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
 }
 
+.page2-box img:hover {
+    transform: scale(1.1); /* Slightly enlarge image on hover */
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5); /* Glowing effect */
+}
