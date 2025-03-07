@@ -88,11 +88,29 @@ ul li:hover {
 }
 
 /* Footer */
+
+/* Ensure the page takes up the full viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: black; /* Ensure background is black for contrast */
+    color: white; /* Set default text to white */
+}
+
+/* Push the footer to the bottom */
+main {
+    flex: 1;
+}
+/* Footer */
+
 footer {
     text-align: center;
     padding: 10px;
-    margin-top: 20px;
-    background-color: #1E1E1E;
+    background-color: #111111; /* Dark footer */
+    color: white;
+    position: sticky;
+    bottom: 0;
     width: 100%;
-    border-top: 1px solid #BB86FC;
 }

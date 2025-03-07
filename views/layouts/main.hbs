@@ -8,17 +8,14 @@
         <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/page2">Second Page</a>
-    </nav>
+    
 
     <div class="container">
-        {{{body}}} <!-- This is where the content from index.hbs & page2.hbs will be injected -->
+        {{{body}}} <!-- This is where the content from index.hbs & page2.hbs will be placed -->
     </div>
 
     <footer>
-        <p>&copy; 2025 My Web App</p>
+        <p>&copy; 2025 Dillon's App</p>
     </footer>
 </body>
 </html>
@@ -28,32 +25,3 @@
 
 
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="https://glitch.com/favicon.ico" />
-    <title>{{title}}</title>
-    <!-- import the SemanticUI stylesheet -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css">
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">   
-  </head>
-   <a href="/">Home</a>
-    <a href="/page2">Go to Second Page</a>
-  <body>
-    <section class="ui container">
-      {{{body}}}
-    </section>
-    <!-- import the jQuery file -->
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script>
-    <!-- import the SemanticUI javascript file -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.js"></script>
-    <!-- import the webpage's javascript file -->
-    <script src="/script.js"></script>
-  </body>
-</html>
