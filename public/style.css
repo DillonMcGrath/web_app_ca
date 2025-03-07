@@ -114,6 +114,25 @@ footer {
     bottom: 0;
     width: 100%;
 }
+.text-box {
+    text-align: center; /* Centers text under image */
+    margin-top: 10px; /* Adds space between image and text */
+}
+
+
+.box {
+    display: flex;
+    flex-direction: column; /* Keeps image and text stacked */
+    align-items: center; /* Centers content */
+    width: 200px; /* Adjust width as needed */
+}
+
+img {
+    width: 100%; /* Ensures images scale properly */
+    max-width: 200px; /* Limits image size */
+}
+
+
 
 .clickable-image {
     display: block;
@@ -128,14 +147,6 @@ footer {
 }
 
 
-.box {
-  width: 250px;
-  text-align: center;
-  background: #222222;
-  padding: 15px;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
 .box a {
   text-decoration: none;
@@ -149,14 +160,36 @@ footer {
   border-radius: 10px;
 }
 
-.text-box {
-  margin-top: 10px;
-  padding: 10px;
-  background: #444444;
-  border-radius: 5px;
-}
+
 
 .box:hover {
   transform: scale(1.05);
   box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
 }
+
+/* Apply styles only to page 2 only */
+
+.page2-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping if needed */
+    justify-content: space-around; /* Spaces items evenly */
+    gap: 20px; /* Adds spacing between boxes */
+}
+
+.page2-box {
+    display: flex;
+    flex-direction: column; /* Keeps image and text stacked */
+    align-items: center; /* Centers content */
+    width: 200px; /* Adjust width as needed */
+}
+
+.page2-box img {
+    width: 100%; /* Ensures images scale properly */
+    max-width: 200px; /* Limits image size */
+}
+
+.page2-text {
+    text-align: center; /* Centers text under image */
+    margin-top: 10px; /* Adds space between image and text */
+}
+

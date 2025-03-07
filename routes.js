@@ -10,7 +10,7 @@ const router = express.Router();
 router.get('/', start.createView);
 
 // Page routes
-router.get("/page2", (req, res) => {
+router.get("/second-page", (req, res) => {
   res.render("page2");
 });
 
