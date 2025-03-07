@@ -12,7 +12,7 @@ const start = {
       info: appStore.getAppInfo()
     };
     
-    response.render('start', viewData);   
+    response.render('index', viewData);   
   },
 };
 
