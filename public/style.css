@@ -7,8 +7,92 @@ html {
   box-sizing: inherit;
 }
 
+
 body {
-  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
-  margin: 2em;
-  background-color: lightgrey;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #E0E0E0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Navigation & Links */
+a {
+    color: #BB86FC;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #FF79C6;
+}
+
+/* Containers */
+.container {
+    width: 80%;
+    max-width: 900px;
+    background-color: #1E1E1E;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    color: #BB86FC;
+    font-size: 2em;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: linear-gradient(90deg, #BB86FC, #3700B3);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.button:hover {
+    background: linear-gradient(90deg, #FF79C6, #BB86FC);
+}
+
+/* Lists */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #252525;
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s;
+}
+
+ul li:hover {
+    transform: scale(1.05);
+    background-color: #333;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #1E1E1E;
+    width: 100%;
+    border-top: 1px solid #BB86FC;
 }
