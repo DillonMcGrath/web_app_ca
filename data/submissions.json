@@ -1,5 +1,9 @@
 {
-  "submissions": []
+  "submissions": [
+    {
+      "name": "tt",
+      "email": "tt@tt.com",
+      "message": "test"
+    }
+  ]
 }
-
-//The implementation of this collection follows a similar approach to the JSON collection usedaleady on this webapp. as this is a feature i wanted and was strugglingwith The code was generated using the prompt to ensure consistency with the assignment requirements.
