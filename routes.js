@@ -14,9 +14,6 @@ router.get("/page2", (req, res) => {
   res.render("page2");
 });
 
-router.get("/page3", (req, res) => {
-  res.render("page3");
-});
 
 
 
@@ -66,6 +63,37 @@ const carsData = JSON.parse(fs.readFileSync('./data/cars.json', 'utf8'));
 router.get("/page5", (req, res) => {
   console.log("Cars Data:", carsData);  // Debugging halemary
   res.render("page5", { cars: carsData.cars });
+});
+
+
+const mechanicsFile = './data/mechanics.json';
+
+// Load existing reviews from the file
+const loadReviews = () => {
+  const data = fs.readFileSync(mechanicsFile, 'utf8');
+  return JSON.parse(data).reviews;
+};
+
+// Route to display page3 with mechanic reviews
+router.get("/page3", (req, res) => {
+  const reviews = loadReviews();
+  res.render("page3", { reviews }); // Pass reviews to Handlebars
+});
+
+// Route to handle new review submissions
+router.post("/submit-review", (req, res) => {
+  // Get data from the submitted form
+  const { name, location, rating, review } = req.body;
+
+  // Load existing reviews and add new one
+  let reviews = loadReviews();
+  reviews.push({ name, location, rating, review });
+
+  // Save updated reviews back to file
+  fs.writeFileSync(mechanicsFile, JSON.stringify({ reviews }, null, 2));
+
+  // Refresh page to show updated reviews
+  res.redirect("/page3");
 });
 
 

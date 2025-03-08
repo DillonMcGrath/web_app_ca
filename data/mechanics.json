@@ -1,0 +1,28 @@
+{
+  "reviews": [
+    {
+      "name": "John's Auto Repair",
+      "location": "Carlow",
+      "rating": 5,
+      "review": "Great service, quick turnaround, and fair pricing!"
+    },
+    {
+      "name": "Speedy Fix Garage",
+      "location": "Cork",
+      "rating": 4,
+      "review": "Fast and efficient, but a bit pricey."
+    },
+    {
+      "name": "dave",
+      "location": "cavan",
+      "rating": "4",
+      "review": "timely job fixed and on the road in no time "
+    },
+    {
+      "name": "David",
+      "location": "cork",
+      "rating": "5",
+      "review": "good job done"
+    }
+  ]
+}
