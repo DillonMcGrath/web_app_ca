@@ -10,15 +10,15 @@ const port = 3000;
 
 app.use(express.static("public"));
 
-//  Add middleware BEFORE defining routes
-app.use(express.json()); // Parses JSON request bodies
+// middleware 
+app.use(express.json()); // calls json request 
 app.use(express.urlencoded({ extended: true })); // Parses form data
 
 const handlebars = create({extname: '.hbs'});
 app.engine(".hbs", handlebars.engine);
 app.set("view engine", ".hbs");
 
-//  Now apply the routes
+/*aplications of routes*/
 app.use("/", routes);
 
 app.listen(port, () => logger.info(`Your app is listening on port ${port}`));

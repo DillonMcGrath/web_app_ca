@@ -78,26 +78,26 @@ router.get("/page3", (req, res) => {
   res.render("page3", { reviews }); // Pass reviews to Handlebars
 });
 
-// Route to handle new review submissions
+// route to handle new review submissions
 router.post("/submit-review", (req, res) => {
-  // Get data from the submitted form
+  // gets data from the submitted form
   const { name, location, rating, review } = req.body;
 
-  // Load existing reviews and add new one
+  // show existing reviews and add new ones
   let reviews = loadReviews();
   reviews.push({ name, location, rating, review });
 
-  // Save updated reviews back to file
+  // save updated reviews back to file
   fs.writeFileSync(mechanicsFile, JSON.stringify({ reviews }, null, 2));
 
-  // Refresh page to show updated reviews
+  // Refresh to show updated reviews
   res.redirect("/page3");
 });
 
 
 
 
-// Load JSON data
+// Load json data
 const aboutData = JSON.parse(fs.readFileSync("./data/about.json", "utf-8"));
 
 // Route for Page 6
