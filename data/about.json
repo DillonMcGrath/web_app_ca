@@ -1,0 +1,10 @@
+{
+  "author": "Dillon McGrath",
+  "email": "contact@mywebapp.com",
+  "location": "Dublin, Ireland",
+  "appStats": {
+    "users": 150,
+    "reviews": 75,
+    "rating": 4.5
+  }
+}
