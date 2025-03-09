@@ -14,6 +14,12 @@ const start = {
     
     response.render('index', viewData);   
   },
+  
+  
+  
+  
+  
+  
 };
 
 export default start;

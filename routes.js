@@ -50,9 +50,7 @@ router.post("/submit", (req, res) => {
 
 
 
-router.get("/page6", (req, res) => {
-  res.render("page6");
-});
+
 
 
 
@@ -94,6 +92,17 @@ router.post("/submit-review", (req, res) => {
 
   // Refresh page to show updated reviews
   res.redirect("/page3");
+});
+
+
+
+
+// Load JSON data
+const aboutData = JSON.parse(fs.readFileSync("./data/about.json", "utf-8"));
+
+// Route for Page 6
+router.get("/", (req, res) => {
+    res.render("page6", { about: aboutData });
 });
 
 
