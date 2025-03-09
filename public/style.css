@@ -20,7 +20,7 @@ body {
     justify-content: center;
 }
 
-/* Navigation & Links */
+/* Navigation + Links */
 a {
     color: #BB86FC;
     text-decoration: none;
@@ -31,7 +31,7 @@ a:hover {
     color: #FF79C6;
 }
 
-/* Containers */
+
 .container {
     width: 80%;
     max-width: 900px;
@@ -42,7 +42,7 @@ a:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Header */
+
 h1 {
     text-align: center;
     color: #BB86FC;
@@ -89,7 +89,7 @@ ul li:hover {
 
 /* Footer */
 
-/* Ensure the page takes up the full viewport */
+/* to make the page fill the screen */
 html, body {
     height: 100%;
     margin: 0;
@@ -99,11 +99,11 @@ html, body {
     color: white; /* Set default text to white */
 }
 
-/* Push the footer to the bottom */
+/* force footer to the bottom */
 main {
     flex: 1;
 }
-/* Footer */
+
 
 footer {
     text-align: center;
@@ -115,7 +115,7 @@ footer {
     width: 100%;
 }
 .text-box {
-    text-align: center; /* Centers text under image */
+    text-align: center; 
     margin-top: 10px; /* Adds space between image and text */
 }
 
@@ -123,13 +123,13 @@ footer {
 .box {
     display: flex;
     flex-direction: column; /* Keeps image and text stacked */
-    align-items: center; /* Centers content */
-    width: 200px; /* Adjust width as needed */
+    align-items: center; 
+    width: 200px; 
 }
 
 img {
-    width: 100%; /* Ensures images scale properly */
-    max-width: 200px; /* Limits image size */
+    width: 100%; /*images scaling */
+    max-width: 200px; /* limits image size */
 }
 
 
@@ -138,12 +138,12 @@ img {
     display: block;
     margin: 20px auto; /* Centers it */
     width: 200px; /* changes the size */
-    cursor: pointer; /* Makes it clearer that it's clickable */
+    cursor: pointer; /* makes it clearer that it's clickable */
     transition: transform 0.2s ease-in-out;
 }
 
 .clickable-image:hover {
-    transform: scale(1.1); /* should give a slight zoom effect */
+    transform: scale(1.1); /* should (hopefully) give a slight zoom effect */
 }
 
 
@@ -178,7 +178,7 @@ img {
 }
 
 .page2-box img {
-    width: 100px; /* Adjust as needed */
+    width: 100px; 
     height: auto;
     max-width: 100px;
 }
@@ -193,7 +193,7 @@ img {
     gap: 20px; /* Space between items */
 }
 .page2-box img {
-    width: 100px; /* Adjust as needed */
+    width: 100px; 
     height: auto;
     max-width: 100px;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
