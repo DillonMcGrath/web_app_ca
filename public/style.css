@@ -167,14 +167,14 @@ img {
   box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
 }
 
-/* Apply styles only to page 2 only */
+/* page 2 only */
 
 .page2-box {
     display: flex;
     flex-direction: row; /* Make image and text side by side */
     align-items: center; /* Align them properly */
     gap: 10px; /* Add spacing between image and text */
-    width: fit-content; /* Ensure it only takes up needed space */
+    width: fit-content; /* only takes up needed space */
 }
 
 .page2-box img {
@@ -189,8 +189,8 @@ img {
 .page2-container {
     display: flex;
     flex-wrap: wrap; /* Allow items to move to new row if needed */
-    justify-content: space-around; /* Distribute items evenly */
-    gap: 20px; /* Space between items */
+    justify-content: space-around; /* spread items evenly */
+    gap: 20px; /* gap between items */
 }
 .page2-box img {
     width: 100px; 
@@ -205,7 +205,7 @@ img {
 }
 
 .popup {
-    display: none; /* Hidden by default */
+    display: none; /* hiddenat start */
     position: fixed;
     top: 50%;
     left: 50%;
@@ -283,7 +283,7 @@ img {
     background: #555;
 }
 
-/* Mobile-Friendly Navbar */
+/* possible mobile friendly navbar found on a sub reddit  */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;

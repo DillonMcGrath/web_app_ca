@@ -28,7 +28,7 @@
 
 <hr>
 
-<!-- Display reviews -->
+<!-- show reviews -->
 <h2>All Reviews</h2>
 <label for="locationFilter">Filter by Location:</label>
 <input type="text" id="locationFilter" placeholder="Enter a location">
@@ -43,7 +43,7 @@
 </ul>
 
 <script>
-// JavaScript for filtering reviews by location
+// javascript for filtering reviews by location
 document.getElementById("locationFilter").addEventListener("input", function () {
     const filterValue = this.value.toLowerCase();
     document.querySelectorAll(".review-item").forEach(item => {
