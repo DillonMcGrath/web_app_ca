@@ -1,15 +1,51 @@
-<nav class="navbar">
-    <div class="logo">
-        <a href="/">My Web App</a>
-    </div>
-    <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-      
-    </ul>
-</nav>
 <h1>Recent Cars</h1>
-<ul>
-  {{#each cars}}
-    <li>{{brand}} {{model}} ({{year}})</li>
+
+<!-- Filter Inputs -->
+<div class="filters">
+  <label for="yearFilter">Filter by Year:</label>
+  <input type="number" id="yearFilter" placeholder="e.g. 2022">
+
+  <label for="modelFilter">Filter by Model:</label>
+  <input type="text" id="modelFilter" placeholder="e.g. Mustang">
+</div>
+
+<!-- Car Display Section -->
+<div id="carContainer">
+  {{#each brands}}
+    <div class="brand-section">
+      <h2>{{this.name}}</h2>
+
+      {{#each this.models}}
+        <div class="car-card" data-year="{{this.year}}" data-model="{{this.name}}">
+          <h3>{{this.name}} ({{this.year}})</h3>
+          <p><strong>Type:</strong> {{this.type}}</p>
+          <p><strong>Horsepower:</strong> {{this.horsepower}} HP</p>
+          <p><strong>Price:</strong> {{this.price}}</p>
+          <p><strong>Description:</strong> {{this.description}}</p>
+        </div>
+      {{/each}}
+
+    </div>
   {{/each}}
-</ul>
+</div>
+
+<!-- Filter Script -->
+<script>
+  document.getElementById("yearFilter").addEventListener("input", applyFilters);
+  document.getElementById("modelFilter").addEventListener("input", applyFilters);
+
+  function applyFilters() {
+    const yearValue = document.getElementById("yearFilter").value.trim();
+    const modelValue = document.getElementById("modelFilter").value.trim().toLowerCase();
+
+    document.querySelectorAll(".car-card").forEach(card => {
+      const year = card.getAttribute("data-year");
+      const model = card.getAttribute("data-model").toLowerCase();
+
+      const matchYear = !yearValue || year.includes(yearValue);
+      const matchModel = !modelValue || model.includes(modelValue);
+
+      card.style.display = (matchYear && matchModel) ? "block" : "none";
+    });
+  }
+</script>

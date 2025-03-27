@@ -1,11 +1,46 @@
 {
-  "cars": [
-    { "brand": "Tesla", "model": "Model S", "year": 2023 },
-    { "brand": "Ford", "model": "Mustang", "year": 2022 },
-    { "brand": "Chevrolet", "model": "Camaro", "year": 2021 },
-    { "brand": "BMW", "model": "M3", "year": 2020 },
-    { "brand": "Audi", "model": "R8", "year": 2019 },
-    { "brand": "Toyota", "model": "Corolla", "year": 2020 },
-    { "brand": "Ford", "model": "Focus", "year": 2018 }
+  "brands": [
+    {
+      "name": "Ford",
+      "models": [
+        {
+          "name": "Mustang",
+          "year": 2022,
+          "type": "Gasoline",
+          "horsepower": 450,
+          "price": "$55,000",
+          "description": "An iconic American muscle car."
+        },
+        {
+          "name": "Focus",
+          "year": 2019,
+          "type": "Gasoline",
+          "horsepower": 160,
+          "price": "$20,000",
+          "description": "A practical and affordable compact car."
+        },
+        {
+          "name": "Fiesta",
+          "year": 2020,
+          "type": "Gasoline",
+          "horsepower": 120,
+          "price": "$18,000",
+          "description": "A small and nimble hatchback, ideal for cities."
+        }
+      ]
+    },
+    {
+      "name": "Tesla",
+      "models": [
+        {
+          "name": "Model S",
+          "year": 2023,
+          "type": "Electric",
+          "horsepower": 670,
+          "price": "$89,000",
+          "description": "A luxury electric sedan with cutting-edge tech."
+        }
+      ]
+    }
   ]
 }

@@ -48,6 +48,12 @@ router.post("/submit", (req, res) => {
     res.redirect("/page4"); // Reload page to show new entry
 });
 
+const carsData = JSON.parse(fs.readFileSync('./data/cars.json', 'utf8'));
+
+router.get("/page5", (req, res) => {
+  res.render("page5", { brands: carsData.brands });
+});
+
 
 
 

@@ -294,3 +294,34 @@ img {
         gap: 10px;
     }
 }
+
+
+.filters {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filters input {
+  margin: 5px;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+}
+
+.brand-section {
+  margin-top: 30px;
+}
+
+.car-card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.car-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(173, 0, 255, 0.4);
+}
