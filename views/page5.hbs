@@ -1,77 +1,123 @@
-<h1>Recent Cars in With Us</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Available Cars</title>
+  <style>
+    /* General page styling */
+    body {
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
 
-<nav class="navbar">
-    <div class="logo">
-        <a href="/">My Web App</a>
-    </div>
-    <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-      
-    </ul>
-</nav>
+    /* Center the main heading */
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-<!-- Filter Inputs -->
-<div class="filters">
-  <label for="yearFilter">Filter by Year:</label>
-  <input type="number" id="yearFilter" placeholder="e.g. 2022">
+    /* Center the main content within a max-width container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-  <label for="modelFilter">Filter by Model:</label>
-  <input type="text" id="modelFilter" placeholder="e.g. Mustang">
-</div>
+    /* Filter form styling */
+    form {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input {
+      margin-right: 10px;
+      padding: 6px;
+      border: 1px solid #444;
+      border-radius: 4px;
+      background-color: #333;
+      color: #f0f0f0;
+    }
+    button {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 4px;
+      background-color: #6c63ff;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #5a52dd;
+    }
 
-<!-- Brand/Model Display -->
-<div id="brandList">
-  {{#each brands}}
-    <div class="brand-block">
-      <h2 class="brand-name" onclick="toggleModels('{{@index}}')">{{this.name}}</h2>
+    /* Brand name styling (clickable) */
+    .brand-name {
+      cursor: pointer;
+      display: block;
+      background-color: #333;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: #f0f0f0;
+    }
+    .brand-name:hover {
+      background-color: #444;
+    }
 
-      <div class="model-list" id="models-{{@index}}" style="display: none;">
-        {{#each this.models}}
-          <div class="model-wrapper" data-year="{{this.year}}" data-model="{{this.name}}">
-            <div class="model-name" onclick="toggleDetails('{{../name}}', '{{@index}}')">
-              {{this.name}} ({{this.year}})
-            </div>
-            <div class="car-details" id="details-{{../name}}-{{@index}}" style="display: none;">
-              <p><strong>Type:</strong> {{this.type}}</p>
-              <p><strong>Horsepower:</strong> {{this.horsepower}} HP</p>
-              <p><strong>Price:</strong> {{this.price}}</p>
-              <p><strong>Description:</strong> {{this.description}}</p>
-            </div>
-          </div>
-        {{/each}}
+    /* Hide model list by default with .hidden */
+    .hidden {
+      display: none;
+    }
+
+    /* Basic list styling for models */
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding-left: 20px; /* Indent model items */
+    }
+    li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Available Cars</h1>
+
+    <!-- Filter Form -->
+    <form method="GET" action="/page5">
+      <input type="text" name="year" placeholder="Filter by Year" value="{{selectedYear}}">
+      <input type="text" name="model" placeholder="Filter by Model" value="{{selectedModel}}">
+      <input type="text" name="price" placeholder="Max Price" value="{{selectedPrice}}">
+      <button type="submit">Search</button>
+    </form>
+
+    <!-- Display Brands and Their Models -->
+    {{#each brands}}
+      <div>
+        <!-- Clickable brand name toggles its model list -->
+        <div class="brand-name" onclick="toggleModels('{{@index}}')">
+          {{name}}
+        </div>
+        <!-- Model list (initially hidden) -->
+        <ul id="models-{{@index}}" class="hidden">
+          {{#each models}}
+            <li>
+              <strong>{{year}} - {{name}}</strong> - {{price}}<br>
+              {{description}}
+            </li>
+          {{/each}}
+        </ul>
       </div>
-    </div>
-  {{/each}}
-</div>
+    {{/each}}
+  </div>
 
-<script>
-  function toggleModels(index) {
-    const modelList = document.getElementById("models-" + index);
-    modelList.style.display = modelList.style.display === "none" ? "block" : "none";
-  }
-
-  function toggleDetails(brand, index) {
-    const detailId = `details-${brand}-${index}`;
-    const detailBox = document.getElementById(detailId);
-    detailBox.style.display = detailBox.style.display === "none" ? "block" : "none";
-  }
-
-  //  Filter functions
-  document.getElementById("yearFilter").addEventListener("input", applyFilters);
-  document.getElementById("modelFilter").addEventListener("input", applyFilters);
-
-  function applyFilters() {
-    const yearValue = document.getElementById("yearFilter").value.trim();
-    const modelValue = document.getElementById("modelFilter").value.trim().toLowerCase();
-
-    document.querySelectorAll(".model-wrapper").forEach(card => {
-      const year = card.getAttribute("data-year");
-      const model = card.getAttribute("data-model").toLowerCase();
-
-      const matchYear = !yearValue || year.includes(yearValue);
-      const matchModel = !modelValue || model.includes(modelValue);
-
-      card.style.display = (matchYear && matchModel) ? "block" : "none";
-    });
-  }
-</script>
+  <script>
+    // Toggles the display of models for a given brand
+    function toggleModels(index) {
+      const list = document.getElementById("models-" + index);
+      list.classList.toggle("hidden");
+    }
+  </script>
+</body>
+</html>
