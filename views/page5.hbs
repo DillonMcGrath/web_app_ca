@@ -3,7 +3,7 @@
 <head>
   <title>Available Cars</title>
   <style>
-    /* page styling added to hbs  */
+    /* page styling added to hbs file due to odd results when connected to the css */
     body {
       background-color: #1a1a1a;
       color: #f0f0f0;
@@ -12,19 +12,19 @@
       padding: 20px;
     }
 
-    /* Center the main heading */
+    /* Center  heading */
     h1 {
       text-align: center;
       margin-bottom: 20px;
     }
 
-    /* Center the main content within a max-width container */
+    /* Centers the content in a container */
     .container {
       max-width: 800px;
       margin: 0 auto;
     }
 
-    /* Filter form styling */
+    /* Filter styling */
     form {
       text-align: center;
       margin-bottom: 20px;
@@ -48,8 +48,8 @@
     button:hover {
       background-color: #5a52dd;
     }
-
-    /* Brand name styling (clickable) */
+    
+    /* brand name clickable */
     .brand-name {
       cursor: pointer;
       display: block;
@@ -64,16 +64,16 @@
       background-color: #444;
     }
 
-    /* Hide model list by default with .hidden */
+    /* hide model list til clicked */
     .hidden {
       display: none;
     }
 
-    /* Basic list styling for models */
+    /*  list styling  */
     ul {
       list-style-type: none;
       margin: 0;
-      padding-left: 20px; /* Indent model items */
+      padding-left: 20px; /* shoves models in a small bit */
     }
     li {
       margin: 5px 0;
@@ -84,7 +84,7 @@
   <div class="container">
     <h1>Available Cars</h1>
 
-    <!-- Filter Form -->
+    <!-- filter form -->
     <form method="GET" action="/page5">
       <input type="text" name="year" placeholder="Filter by Year" value="{{selectedYear}}">
       <input type="text" name="model" placeholder="Filter by Model" value="{{selectedModel}}">
@@ -92,14 +92,14 @@
       <button type="submit">Search</button>
     </form>
 
-    <!-- Display Brands and Their Models -->
+    <!-- Shows brands and their models -->
     {{#each brands}}
       <div>
-        <!-- Clickable brand name toggles its model list -->
+        <!-- clickable brand name shows models when clicked -->
         <div class="brand-name" onclick="toggleModels('{{@index}}')">
           {{name}}
         </div>
-        <!-- Model list (initially hidden) -->
+        <!-- model list  hidden when opening  -->
         <ul id="models-{{@index}}" class="hidden">
           {{#each models}}
             <li>
@@ -113,7 +113,7 @@
   </div>
 
   <script>
-    // Toggles the display of models for a given brand
+    // Toggles the display of models for any given brand
     function toggleModels(index) {
       const list = document.getElementById("models-" + index);
       list.classList.toggle("hidden");
