@@ -1,4 +1,4 @@
-<h1>Browse Cars by Brand</h1>
+<h1>Recent Cars in With Us</h1>
 
 <nav class="navbar">
     <div class="logo">
@@ -10,25 +10,33 @@
     </ul>
 </nav>
 
-<!-- Brand List -->
+<!-- Filter Inputs -->
+<div class="filters">
+  <label for="yearFilter">Filter by Year:</label>
+  <input type="number" id="yearFilter" placeholder="e.g. 2022">
+
+  <label for="modelFilter">Filter by Model:</label>
+  <input type="text" id="modelFilter" placeholder="e.g. Mustang">
+</div>
+
+<!-- Brand/Model Display -->
 <div id="brandList">
   {{#each brands}}
     <div class="brand-block">
       <h2 class="brand-name" onclick="toggleModels('{{@index}}')">{{this.name}}</h2>
 
-      <!-- Model List hidden -->
       <div class="model-list" id="models-{{@index}}" style="display: none;">
         {{#each this.models}}
-          <div class="model-name" onclick="toggleDetails('{{../name}}', '{{@index}}')">
-            {{this.name}} ({{this.year}})
-          </div>
-
-          <!-- Car Details  hidden -->
-          <div class="car-details" id="details-{{../name}}-{{@index}}" style="display: none;">
-            <p><strong>Type:</strong> {{this.type}}</p>
-            <p><strong>Horsepower:</strong> {{this.horsepower}} HP</p>
-            <p><strong>Price:</strong> {{this.price}}</p>
-            <p><strong>Description:</strong> {{this.description}}</p>
+          <div class="model-wrapper" data-year="{{this.year}}" data-model="{{this.name}}">
+            <div class="model-name" onclick="toggleDetails('{{../name}}', '{{@index}}')">
+              {{this.name}} ({{this.year}})
+            </div>
+            <div class="car-details" id="details-{{../name}}-{{@index}}" style="display: none;">
+              <p><strong>Type:</strong> {{this.type}}</p>
+              <p><strong>Horsepower:</strong> {{this.horsepower}} HP</p>
+              <p><strong>Price:</strong> {{this.price}}</p>
+              <p><strong>Description:</strong> {{this.description}}</p>
+            </div>
           </div>
         {{/each}}
       </div>
@@ -36,7 +44,6 @@
   {{/each}}
 </div>
 
-<!-- JavaScript to Toggle Views -->
 <script>
   function toggleModels(index) {
     const modelList = document.getElementById("models-" + index);
@@ -47,5 +54,24 @@
     const detailId = `details-${brand}-${index}`;
     const detailBox = document.getElementById(detailId);
     detailBox.style.display = detailBox.style.display === "none" ? "block" : "none";
+  }
+
+  //  Filter functions
+  document.getElementById("yearFilter").addEventListener("input", applyFilters);
+  document.getElementById("modelFilter").addEventListener("input", applyFilters);
+
+  function applyFilters() {
+    const yearValue = document.getElementById("yearFilter").value.trim();
+    const modelValue = document.getElementById("modelFilter").value.trim().toLowerCase();
+
+    document.querySelectorAll(".model-wrapper").forEach(card => {
+      const year = card.getAttribute("data-year");
+      const model = card.getAttribute("data-model").toLowerCase();
+
+      const matchYear = !yearValue || year.includes(yearValue);
+      const matchModel = !modelValue || model.includes(modelValue);
+
+      card.style.display = (matchYear && matchModel) ? "block" : "none";
+    });
   }
 </script>

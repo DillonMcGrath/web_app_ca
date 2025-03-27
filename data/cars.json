@@ -4,28 +4,31 @@
       "name": "Ford",
       "models": [
         {
+          "id": "mustang2022",
           "name": "Mustang",
           "year": 2022,
           "type": "Gasoline",
           "horsepower": 450,
           "price": "$55,000",
-          "description": "An iconic American muscle car."
+          "description": "An iconic American muscle car known for its performance and aggressive styling."
         },
         {
+          "id": "focus2019",
           "name": "Focus",
           "year": 2019,
           "type": "Gasoline",
           "horsepower": 160,
           "price": "$20,000",
-          "description": "A practical and affordable compact car."
+          "description": "A compact hatchback with great fuel economy and urban maneuverability."
         },
         {
+          "id": "fiesta2020",
           "name": "Fiesta",
           "year": 2020,
           "type": "Gasoline",
           "horsepower": 120,
           "price": "$18,000",
-          "description": "A small and nimble hatchback, ideal for cities."
+          "description": "A small city car offering practicality and efficiency for daily driving."
         }
       ]
     },
@@ -33,14 +36,100 @@
       "name": "Tesla",
       "models": [
         {
+          "id": "models2023",
           "name": "Model S",
           "year": 2023,
           "type": "Electric",
           "horsepower": 670,
           "price": "$89,000",
-          "description": "A luxury electric sedan with cutting-edge tech."
+          "description": "A luxury electric sedan with advanced autopilot and top-tier acceleration."
+        },
+        {
+          "id": "model32022",
+          "name": "Model 3",
+          "year": 2022,
+          "type": "Electric",
+          "horsepower": 480,
+          "price": "$42,000",
+          "description": "A compact electric car designed for affordability and cutting-edge performance."
+        },
+        {
+          "id": "modelx2021",
+          "name": "Model X",
+          "year": 2021,
+          "type": "Electric",
+          "horsepower": 778,
+          "price": "$99,000",
+          "description": "A powerful electric SUV with falcon-wing doors and incredible interior space."
+        }
+      ]
+    },
+    {
+      "name": "BMW",
+      "models": [
+        {
+          "id": "m32021",
+          "name": "M3",
+          "year": 2021,
+          "type": "Gasoline",
+          "horsepower": 473,
+          "price": "$70,000",
+          "description": "A high-performance sports sedan blending luxury with aggressive driving dynamics."
+        },
+        {
+          "id": "x52020",
+          "name": "X5",
+          "year": 2020,
+          "type": "Hybrid",
+          "horsepower": 389,
+          "price": "$61,000",
+          "description": "A mid-size luxury SUV offering comfort, performance, and hybrid efficiency."
+        },
+        {
+          "id": "i42023",
+          "name": "i4",
+          "year": 2023,
+          "type": "Electric",
+          "horsepower": 536,
+          "price": "$56,000",
+          "description": "BMW’s latest electric Gran Coupe with sport handling and refined design."
+        }
+      ]
+    },
+    {
+      "name": "Toyota",
+      "models": [
+        {
+          "id": "corolla2021",
+          "name": "Corolla",
+          "year": 2021,
+          "type": "Hybrid",
+          "horsepower": 121,
+          "price": "$24,000",
+          "description": "A dependable compact car known for reliability and fuel efficiency."
+        },
+        {
+          "id": "supra2022",
+          "name": "Supra",
+          "year": 2022,
+          "type": "Gasoline",
+          "horsepower": 382,
+          "price": "$45,000",
+          "description": "A sleek performance coupe revived with sporty handling and turbocharged power."
+        },
+        {
+          "id": "rav42020",
+          "name": "RAV4",
+          "year": 2020,
+          "type": "Hybrid",
+          "horsepower": 219,
+          "price": "$28,000",
+          "description": "A compact SUV that balances efficiency, space, and reliability."
         }
       ]
     }
   ]
 }
+
+<! The car model data used in cars.json was generated using a prompt to ChatGPT to save time and ensure variety across brands and models. The prompt used was:
+ Give me a JSON structure of four car brands, each with at least three models. Include an id, name, year, type, horsepower, price, and a short description for each car./
