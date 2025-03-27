@@ -280,7 +280,7 @@ img {
 }
 
 .nav-links a:hover {
-    background: #555;
+    background: #555555;
 }
 
 /* possible mobile friendly navbar found on a sub reddit  */
@@ -325,3 +325,39 @@ img {
   transform: scale(1.02);
   box-shadow: 0 0 15px rgba(173, 0, 255, 0.4);
 }
+
+
+.brand-block {
+  margin-bottom: 30px;
+  padding: 10px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.brand-name {
+  font-size: 1.5em;
+  color: #b367ff;
+  cursor: pointer;
+}
+
+.model-name {
+  margin-left: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #dddddd;
+}
+
+.model-name:hover {
+  text-decoration: underline;
+}
+
+.car-details {
+  margin-left: 40px;
+  background-color: #2a2a2a;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  color: #cccccc;
+}
+

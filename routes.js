@@ -62,12 +62,7 @@ router.get("/page5", (req, res) => {
 
 
 
-const carsData = JSON.parse(fs.readFileSync('./data/cars.json', 'utf8'));
 
-router.get("/page5", (req, res) => {
-  console.log("Cars Data:", carsData);  // Debugging halemary
-  res.render("page5", { cars: carsData.cars });
-});
 
 
 const mechanicsFile = './data/mechanics.json';
