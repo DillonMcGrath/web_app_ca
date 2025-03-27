@@ -1,127 +1,73 @@
-"use strict";
-
 import express from "express";
-import logger from "./utils/logger.js";
-import start from "./controllers/start.js";
 import fs from "fs";
 
 const router = express.Router();
 
-// ---------------------------------------------
-// Home route
-// ---------------------------------------------
-router.get("/", start.createView);
+// READ cars.json once
+const carsFile = "./data/cars.json";
+const carsData = JSON.parse(fs.readFileSync(carsFile, "utf8"));
 
-// ---------------------------------------------
-// Page 2 route
-// ---------------------------------------------
-router.get("/page2", (req, res) => {
-  res.render("page2");
+// Assume carsData = { "brands": [ { "name": "Ford", "models": [...] }, ... ] }
+// If your file is just [ { "name": "Ford", ... }, ... ] then tweak accordingly.
+const brands = carsData.brands;
+
+// Build a list of unique years and models for dropdowns
+const allYears = new Set();
+const allModels = new Set();
+
+brands.forEach((brand) => {
+  brand.models.forEach((m) => {
+    allYears.add(m.year);
+    allModels.add(m.name);
+  });
 });
 
-// ---------------------------------------------
-// Page 4 routes (submissions form)
-// ---------------------------------------------
-const submissionsFile = "./data/submissions.json";
-let submissions = [];
+// Convert sets to arrays and sort them
+const uniqueYears = Array.from(allYears).sort();
+const uniqueModels = Array.from(allModels).sort();
 
-// Load existing submissions if file exists
-if (fs.existsSync(submissionsFile)) {
-  const fileData = fs.readFileSync(submissionsFile, "utf8");
-  submissions = JSON.parse(fileData).submissions;
-}
-
-// Render page4 with stored submissions
-router.get("/page4", (req, res) => {
-  res.render("page4", { submissions });
-});
-
-// Handle form submission for page4
-router.post("/submit", (req, res) => {
-  const { name, email, message } = req.body;
-
-  // Prevent empty submissions
-  if (!name || !email || !message) {
-    return res.redirect("/page4");
-  }
-
-  // Add new entry to submissions array
-  const newEntry = { name, email, message };
-  submissions.push(newEntry);
-
-  // Save updated data to file
-  fs.writeFileSync(
-    submissionsFile,
-    JSON.stringify({ submissions }, null, 2)
-  );
-
-  // Reload page to show new entry
-  res.redirect("/page4");
-});
-
-// ---------------------------------------------
-// Page 5 route (cars data)
-// ---------------------------------------------
-const carsData = JSON.parse(fs.readFileSync("./data/cars.json", "utf8"));
-
+// GET route for page5
 router.get("/page5", (req, res) => {
-  console.log("Cars Data:", carsData); // For debugging
-  // If your JSON is { "brands": [ ... ] }, use:
-  res.render("page5", { brands: carsData.brands });
+  const { year, model } = req.query;
 
-  // If instead your JSON is { "cars": [ ... ] }, use:
-  // res.render("page5", { cars: carsData.cars });
+  // Make a copy of the data to filter
+  let filteredBrands = brands.map((brand) => {
+    // Filter the brand's models if year/model query params exist
+    let filteredModels = brand.models;
 
-  // Or if it's just an array, do:
-  // res.render("page5", { cars: carsData });
+    // If 'year' was selected and not empty, filter by year
+    if (year) {
+      filteredModels = filteredModels.filter(
+        (m) => String(m.year) === String(year)
+      );
+    }
+
+    // If 'model' was selected and not empty, filter by model name (exact match)
+    // For partial matches, use `.includes(...)` instead
+    if (model) {
+      filteredModels = filteredModels.filter(
+        (m) => m.name.toLowerCase() === model.toLowerCase()
+      );
+    }
+
+    // Return a new brand object with the filtered models
+    return { ...brand, models: filteredModels };
+  });
+
+  // Optionally remove brands that now have zero models
+  filteredBrands = filteredBrands.filter((brand) => brand.models.length > 0);
+
+  // Render page5.hbs, passing:
+  // 1) the filtered list
+  // 2) the unique dropdown options
+  // 3) the current selected filters (so we can keep them in the dropdown)
+  res.render("page5", {
+    brands: filteredBrands,
+    uniqueYears,
+    uniqueModels,
+    selectedYear: year || "",
+    selectedModel: model || "",
+  });
 });
 
-// ---------------------------------------------
-// Page 3 routes (mechanic reviews)
-// ---------------------------------------------
-const mechanicsFile = "./data/mechanics.json";
-
-// Helper function to load reviews
-const loadReviews = () => {
-  const data = fs.readFileSync(mechanicsFile, "utf8");
-  return JSON.parse(data).reviews;
-};
-
-// Display page3 with mechanic reviews
-router.get("/page3", (req, res) => {
-  const reviews = loadReviews();
-  res.render("page3", { reviews });
-});
-
-// Handle new review submissions
-router.post("/submit-review", (req, res) => {
-  const { name, location, rating, review } = req.body;
-  let reviews = loadReviews();
-
-  // Add new review
-  reviews.push({ name, location, rating, review });
-
-  // Save to file
-  fs.writeFileSync(
-    mechanicsFile,
-    JSON.stringify({ reviews }, null, 2)
-  );
-
-  // Refresh page
-  res.redirect("/page3");
-});
-
-// ---------------------------------------------
-// Page 6 route (about data)
-// ---------------------------------------------
-const aboutData = JSON.parse(fs.readFileSync("./data/about.json", "utf8"));
-
-// Use /page6 instead of / to avoid conflict with home route
-router.get("/page6", (req, res) => {
-  res.render("page6", { about: aboutData });
-});
-
-// ---------------------------------------------
-// Export the router
-// ---------------------------------------------
 export default router;
