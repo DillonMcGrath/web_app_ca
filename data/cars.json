@@ -130,6 +130,6 @@
     }
   ]
 }
+]
 
-<! The car model data used in cars.json was generated using a prompt to ChatGPT to save time and ensure variety across brands and models. The prompt used was:
- Give me a JSON structure of four car brands, each with at least three models. Include an id, name, year, type, horsepower, price, and a short description for each car./
+<!-- The car model data used in cars.json was generated using a prompt to ChatGPT to save time and ensure variety across brands and models. The prompt used was:Give me a JSON structure of four car brands, each with at least three models. Include an id, name, year, type, horsepower, price, and a short description for each car.--!> 
