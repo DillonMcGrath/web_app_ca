@@ -4,6 +4,11 @@
       "name": "functional test1",
       "email": "tester@tt.com",
       "message": "test"
+    },
+    {
+      "name": "test v2",
+      "email": "test@fuctionaltest.pt2",
+      "message": "after editing this is a test to make sure all functions are still functioning "
     }
   ]
 }
