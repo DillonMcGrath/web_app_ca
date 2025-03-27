@@ -14,6 +14,24 @@
           "name": "Focus",
           "price": "$20,000",
           "description": "A compact hatchback with great fuel economy and urban maneuverability."
+        },
+        {
+          "year": 2020,
+          "name": "Fiesta",
+          "price": "$18,000",
+          "description": "A nimble compact car designed for efficiency and style."
+        },
+        {
+          "year": 2021,
+          "name": "Explorer",
+          "price": "$40,000",
+          "description": "A versatile SUV that balances performance with family-friendly features."
+        },
+        {
+          "year": 2023,
+          "name": "Edge",
+          "price": "$35,000",
+          "description": "A modern crossover with dynamic design and advanced technology."
         }
       ]
     },
@@ -31,6 +49,24 @@
           "name": "Model 3",
           "price": "$42,000",
           "description": "A compact electric car designed for affordability and cutting-edge performance."
+        },
+        {
+          "year": 2021,
+          "name": "Model X",
+          "price": "$99,000",
+          "description": "A futuristic SUV with falcon-wing doors and spacious interiors."
+        },
+        {
+          "year": 2022,
+          "name": "Model Y",
+          "price": "$50,000",
+          "description": "A compact SUV that combines efficiency with performance."
+        },
+        {
+          "year": 2023,
+          "name": "Cybertruck",
+          "price": "$60,000",
+          "description": "An all-electric pickup with an unconventional design and rugged capability."
         }
       ]
     },
@@ -48,6 +84,129 @@
           "name": "Supra",
           "price": "$45,000",
           "description": "A sleek performance coupe revived with sporty handling and turbocharged power."
+        },
+        {
+          "year": 2021,
+          "name": "Camry",
+          "price": "$25,000",
+          "description": "A midsize sedan blending comfort with advanced safety features."
+        },
+        {
+          "year": 2023,
+          "name": "RAV4",
+          "price": "$30,000",
+          "description": "A versatile compact SUV with modern design and hybrid options."
+        },
+        {
+          "year": 2020,
+          "name": "Prius",
+          "price": "$27,000",
+          "description": "A pioneering hybrid that emphasizes fuel efficiency and eco-friendliness."
+        }
+      ]
+    },
+    {
+      "name": "BMW",
+      "models": [
+        {
+          "year": 2022,
+          "name": "M3",
+          "price": "$70,000",
+          "description": "A high-performance sports sedan blending luxury with aggressive driving dynamics."
+        },
+        {
+          "year": 2021,
+          "name": "X5",
+          "price": "$65,000",
+          "description": "A mid-size luxury SUV offering a mix of performance and comfort."
+        },
+        {
+          "year": 2023,
+          "name": "i4",
+          "price": "$56,000",
+          "description": "BMW’s latest electric Gran Coupe with refined design and sporty handling."
+        },
+        {
+          "year": 2022,
+          "name": "Z4",
+          "price": "$50,000",
+          "description": "A sleek convertible that offers dynamic driving with open-air fun."
+        },
+        {
+          "year": 2021,
+          "name": "X3",
+          "price": "$45,000",
+          "description": "A compact luxury SUV known for its agility and upscale features."
+        }
+      ]
+    },
+    {
+      "name": "Honda",
+      "models": [
+        {
+          "year": 2020,
+          "name": "Civic",
+          "price": "$22,000",
+          "description": "A compact sedan recognized for its efficiency and reliability."
+        },
+        {
+          "year": 2021,
+          "name": "Accord",
+          "price": "$26,000",
+          "description": "A midsize sedan combining performance, comfort, and style."
+        },
+        {
+          "year": 2022,
+          "name": "CR-V",
+          "price": "$28,000",
+          "description": "A popular compact SUV with ample space and advanced features."
+        },
+        {
+          "year": 2023,
+          "name": "Pilot",
+          "price": "$35,000",
+          "description": "A family-oriented SUV offering versatility and modern technology."
+        },
+        {
+          "year": 2020,
+          "name": "Fit",
+          "price": "$18,000",
+          "description": "A subcompact car that’s both efficient and practical."
+        }
+      ]
+    },
+    {
+      "name": "Chevrolet",
+      "models": [
+        {
+          "year": 2021,
+          "name": "Malibu",
+          "price": "$24,000",
+          "description": "A midsize sedan with a comfortable ride and modern styling."
+        },
+        {
+          "year": 2022,
+          "name": "Impala",
+          "price": "$32,000",
+          "description": "A full-size sedan known for its spacious interior and smooth performance."
+        },
+        {
+          "year": 2023,
+          "name": "Equinox",
+          "price": "$28,000",
+          "description": "A compact SUV that blends style, technology, and utility."
+        },
+        {
+          "year": 2022,
+          "name": "Tahoe",
+          "price": "$50,000",
+          "description": "A large SUV built for power, comfort, and family adventures."
+        },
+        {
+          "year": 2021,
+          "name": "Spark",
+          "price": "$15,000",
+          "description": "A small, affordable car designed for efficient urban driving."
         }
       ]
     }
