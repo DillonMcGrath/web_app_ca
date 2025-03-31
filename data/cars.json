@@ -4,34 +4,31 @@
       "name": "Ford",
       "models": [
         {
-          "year": 2022,
+          "id": "mustang2022",
           "name": "Mustang",
+          "year": 2022,
+          "type": "Gasoline",
+          "horsepower": 450,
           "price": "$55,000",
           "description": "An iconic American muscle car known for its performance and aggressive styling."
         },
         {
-          "year": 2019,
+          "id": "focus2019",
           "name": "Focus",
+          "year": 2019,
+          "type": "Gasoline",
+          "horsepower": 160,
           "price": "$20,000",
           "description": "A compact hatchback with great fuel economy and urban maneuverability."
         },
         {
-          "year": 2020,
+          "id": "fiesta2020",
           "name": "Fiesta",
+          "year": 2020,
+          "type": "Gasoline",
+          "horsepower": 120,
           "price": "$18,000",
-          "description": "A nimble compact car designed for efficiency and style."
-        },
-        {
-          "year": 2021,
-          "name": "Explorer",
-          "price": "$40,000",
-          "description": "A versatile SUV that balances performance with family-friendly features."
-        },
-        {
-          "year": 2023,
-          "name": "Edge",
-          "price": "$35,000",
-          "description": "A modern crossover with dynamic design and advanced technology."
+          "description": "A small city car offering practicality and efficiency for daily driving."
         }
       ]
     },
@@ -39,69 +36,31 @@
       "name": "Tesla",
       "models": [
         {
-          "year": 2023,
+          "id": "models2023",
           "name": "Model S",
+          "year": 2023,
+          "type": "Electric",
+          "horsepower": 670,
           "price": "$89,000",
           "description": "A luxury electric sedan with advanced autopilot and top-tier acceleration."
         },
         {
-          "year": 2022,
+          "id": "model32022",
           "name": "Model 3",
+          "year": 2022,
+          "type": "Electric",
+          "horsepower": 480,
           "price": "$42,000",
           "description": "A compact electric car designed for affordability and cutting-edge performance."
         },
         {
-          "year": 2021,
+          "id": "modelx2021",
           "name": "Model X",
-          "price": "$99,000",
-          "description": "A futuristic SUV with falcon-wing doors and spacious interiors."
-        },
-        {
-          "year": 2022,
-          "name": "Model Y",
-          "price": "$50,000",
-          "description": "A compact SUV that combines efficiency with performance."
-        },
-        {
-          "year": 2023,
-          "name": "Cybertruck",
-          "price": "$60,000",
-          "description": "An all-electric pickup with an unconventional design and rugged capability."
-        }
-      ]
-    },
-    {
-      "name": "Toyota",
-      "models": [
-        {
-          "year": 2020,
-          "name": "Corolla",
-          "price": "$20,000",
-          "description": "A dependable compact car known for reliability and fuel efficiency."
-        },
-        {
-          "year": 2022,
-          "name": "Supra",
-          "price": "$45,000",
-          "description": "A sleek performance coupe revived with sporty handling and turbocharged power."
-        },
-        {
           "year": 2021,
-          "name": "Camry",
-          "price": "$25,000",
-          "description": "A midsize sedan blending comfort with advanced safety features."
-        },
-        {
-          "year": 2023,
-          "name": "RAV4",
-          "price": "$30,000",
-          "description": "A versatile compact SUV with modern design and hybrid options."
-        },
-        {
-          "year": 2020,
-          "name": "Prius",
-          "price": "$27,000",
-          "description": "A pioneering hybrid that emphasizes fuel efficiency and eco-friendliness."
+          "type": "Electric",
+          "horsepower": 778,
+          "price": "$99,000",
+          "description": "A powerful electric SUV with falcon-wing doors and incredible interior space."
         }
       ]
     },
@@ -109,104 +68,63 @@
       "name": "BMW",
       "models": [
         {
-          "year": 2022,
+          "id": "m32021",
           "name": "M3",
+          "year": 2021,
+          "type": "Gasoline",
+          "horsepower": 473,
           "price": "$70,000",
           "description": "A high-performance sports sedan blending luxury with aggressive driving dynamics."
         },
         {
-          "year": 2021,
+          "id": "x52020",
           "name": "X5",
-          "price": "$65,000",
-          "description": "A mid-size luxury SUV offering a mix of performance and comfort."
+          "year": 2020,
+          "type": "Hybrid",
+          "horsepower": 389,
+          "price": "$61,000",
+          "description": "A mid-size luxury SUV offering comfort, performance, and hybrid efficiency."
         },
         {
-          "year": 2023,
+          "id": "i42023",
           "name": "i4",
+          "year": 2023,
+          "type": "Electric",
+          "horsepower": 536,
           "price": "$56,000",
-          "description": "BMW’s latest electric Gran Coupe with refined design and sporty handling."
-        },
-        {
-          "year": 2022,
-          "name": "Z4",
-          "price": "$50,000",
-          "description": "A sleek convertible that offers dynamic driving with open-air fun."
-        },
-        {
-          "year": 2021,
-          "name": "X3",
-          "price": "$45,000",
-          "description": "A compact luxury SUV known for its agility and upscale features."
+          "description": "BMW’s latest electric Gran Coupe with sport handling and refined design."
         }
       ]
     },
     {
-      "name": "Honda",
+      "name": "Toyota",
       "models": [
         {
-          "year": 2020,
-          "name": "Civic",
-          "price": "$22,000",
-          "description": "A compact sedan recognized for its efficiency and reliability."
-        },
-        {
+          "id": "corolla2021",
+          "name": "Corolla",
           "year": 2021,
-          "name": "Accord",
-          "price": "$26,000",
-          "description": "A midsize sedan combining performance, comfort, and style."
-        },
-        {
-          "year": 2022,
-          "name": "CR-V",
-          "price": "$28,000",
-          "description": "A popular compact SUV with ample space and advanced features."
-        },
-        {
-          "year": 2023,
-          "name": "Pilot",
-          "price": "$35,000",
-          "description": "A family-oriented SUV offering versatility and modern technology."
-        },
-        {
-          "year": 2020,
-          "name": "Fit",
-          "price": "$18,000",
-          "description": "A subcompact car that’s both efficient and practical."
-        }
-      ]
-    },
-    {
-      "name": "Chevrolet",
-      "models": [
-        {
-          "year": 2021,
-          "name": "Malibu",
+          "type": "Hybrid",
+          "horsepower": 121,
           "price": "$24,000",
-          "description": "A midsize sedan with a comfortable ride and modern styling."
+          "description": "A dependable compact car known for reliability and fuel efficiency."
         },
         {
+          "id": "supra2022",
+          "name": "Supra",
           "year": 2022,
-          "name": "Impala",
-          "price": "$32,000",
-          "description": "A full-size sedan known for its spacious interior and smooth performance."
+          "type": "Gasoline",
+          "horsepower": 382,
+          "price": "$45,000",
+          "description": "A sleek performance coupe revived with sporty handling and turbocharged power."
         },
         {
-          "year": 2023,
-          "name": "Equinox",
+          "id": "rav42020",
+          "name": "RAV4",
+          "year": 2020,
+          "type": "Hybrid",
+          "horsepower": 219,
           "price": "$28,000",
-          "description": "A compact SUV that blends style, technology, and utility."
-        },
-        {
-          "year": 2022,
-          "name": "Tahoe",
-          "price": "$50,000",
-          "description": "A large SUV built for power, comfort, and family adventures."
-        },
-        {
-          "year": 2021,
-          "name": "Spark",
-          "price": "$15,000",
-          "description": "A small, affordable car designed for efficient urban driving."
+          "description": "A compact SUV that balances efficiency, space, and reliability."
         }
       ]
     }

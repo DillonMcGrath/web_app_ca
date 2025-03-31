@@ -3,6 +3,8 @@
 import express from "express";
 import fs from "fs";
 import start from "./controllers/start.js"; // Home controller
+import { showCarsPage } from './controllers/carController.js';
+
 
 const router = express.Router();
 
