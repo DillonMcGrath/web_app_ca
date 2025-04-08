@@ -1,17 +1,8 @@
-// models/car-store.js
-
+// car-store.js
 import fs from "fs";
 
-// Read and parse the JSON file manually using fs
-const rawData = fs.readFileSync("./models/car-store.json", "utf8");
-const carData = JSON.parse(rawData);
-
-// Plain English:
-// This gives access to all car brand data from the JSON
-const carStore = {
-  getAllBrands() {
-    return carData.brands;
-  }
-};
-
-export default carStore;
+// Reads car data from JSON file and returns it
+export function getAllCarBrands() {
+  const data = fs.readFileSync("./data/cars.json", "utf8");
+  return JSON.parse(data).brands;
+}

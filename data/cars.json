@@ -1,0 +1,68 @@
+{
+  "brands": [
+    {
+      "name": "Ford",
+      "models": [
+        {
+          "id": "mustang2022",
+          "name": "Mustang",
+          "year": 2022,
+          "type": "Gasoline",
+          "horsepower": 450,
+          "price": "$55,000",
+          "description": "An iconic American muscle car known for its performance and aggressive styling."
+        },
+        {
+          "id": "focus2019",
+          "name": "Focus",
+          "year": 2019,
+          "type": "Gasoline",
+          "horsepower": 160,
+          "price": "$20,000",
+          "description": "A compact hatchback with great fuel economy and urban maneuverability."
+        },
+        {
+          "id": "fiesta2020",
+          "name": "Fiesta",
+          "year": 2020,
+          "type": "Gasoline",
+          "horsepower": 120,
+          "price": "$18,000",
+          "description": "A small city car offering practicality and efficiency for daily driving."
+        }
+      ]
+    },
+    {
+      "name": "Tesla",
+      "models": [
+        {
+          "id": "models2023",
+          "name": "Model S",
+          "year": 2023,
+          "type": "Electric",
+          "horsepower": 670,
+          "price": "$89,000",
+          "description": "A luxury electric sedan with advanced autopilot and top-tier acceleration."
+        },
+        {
+          "id": "model32022",
+          "name": "Model 3",
+          "year": 2022,
+          "type": "Electric",
+          "horsepower": 480,
+          "price": "$42,000",
+          "description": "A compact electric car designed for affordability and cutting-edge performance."
+        },
+        {
+          "id": "modelx2021",
+          "name": "Model X",
+          "year": 2021,
+          "type": "Electric",
+          "horsepower": 778,
+          "price": "$99,000",
+          "description": "A powerful electric SUV with falcon-wing doors and incredible interior space."
+        }
+      ]
+    }
+  ]
+}
