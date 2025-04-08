@@ -1,46 +1,36 @@
-// controllers/car-controller.js
-import carStore from "../models/car-store.js";
+// /controllers/car-controller.js
 
-// Controller that handles rendering the cars page
-function showCarsPage(req, res) {
-  const { year, model, price } = req.query;
+import fs from 'fs';
 
-  // Filter brands and models based on query parameters
-  let filteredBrands = carStore.brands.map((brand) => {
-    let filteredModels = brand.models;
+// Load and parse the cars.json file
+const carsData = JSON.parse(fs.readFileSync('./data/cars.json', 'utf8'));
 
-    if (year) {
-      filteredModels = filteredModels.filter((m) => String(m.year) === year);
-    }
+// Show list of car brands
+const showCarBrands = (req, res) => {
+  res.render("page5", { brands: carsData.brands });
+};
 
-    if (model) {
-      filteredModels = filteredModels.filter((m) =>
-        m.name.toLowerCase().includes(model.toLowerCase())
-      );
-    }
+// Show models under a selected brand
+const showCarModels = (req, res) => {
+  const brand = req.params.brand;
+  const selectedBrand = carsData.brands.find(b => b.name.toLowerCase() === brand.toLowerCase());
+  if (!selectedBrand) return res.status(404).send("Brand not found");
+  res.render("page5-models", { brand: selectedBrand });
+};
 
-    if (price) {
-      const maxPrice = Number(price);
-      filteredModels = filteredModels.filter((m) => {
-        const numericPrice = Number(m.price.replace(/[^0-9.]/g, ""));
-        return numericPrice <= maxPrice;
-      });
-    }
+// Show details of a selected model
+const showCarDetails = (req, res) => {
+  const brand = req.params.brand;
+  const modelId = req.params.modelId;
+  const selectedBrand = carsData.brands.find(b => b.name.toLowerCase() === brand.toLowerCase());
+  if (!selectedBrand) return res.status(404).send("Brand not found");
+  const model = selectedBrand.models.find(m => m.id === modelId);
+  if (!model) return res.status(404).send("Model not found");
+  res.render("page5-details", { brand: selectedBrand.name, model });
+};
 
-    return { ...brand, models: filteredModels };
-  });
-
-  filteredBrands = filteredBrands.filter((b) => b.models.length > 0);
-
-  res.render("page5", {
-    brands: filteredBrands,
-    selectedYear: year || "",
-    selectedModel: model || "",
-    selectedPrice: price || ""
-  });
-}
-
-// Export as default properly
 export default {
-  showCarsPage
+  showCarBrands,
+  showCarModels,
+  showCarDetails
 };
