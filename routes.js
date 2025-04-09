@@ -68,9 +68,9 @@ router.post("/submit", (req, res) => {
 // Page 5 Route (Car Collection with Filters)
 // -----------------------------------------
 
-// We're not handling logic directly in the routes anymore —
-// instead, we hand this off to the controller using MVC style.
-// This makes our route cleaner and keeps everything organised properly.
+// not handling logic directly in the routes anymore —
+// instead i hand this off to the controller using MVC style.
+// This makes the route cleaner and keeps everything organised properly.
 
 router.get("/page5", carController.showCarBrands);
 router.get('/page5/:brand', carController.showCarModels);
