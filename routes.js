@@ -1,5 +1,6 @@
 "use strict";
 
+import { carController } from './controllers/car-controller.js';
 import express from "express";
 import fs from "fs";
 import start from "./controllers/start.js"; // Home controller
@@ -64,52 +65,16 @@ router.post("/submit", (req, res) => {
 });
 
 // -----------------------------------------
-// Page 5 Route (Cars Data with Filters)
+// Page 5 Route (Car Collection with Filters)
 // -----------------------------------------
-router.get("/page5", (req, res) => {
-  const { year, model, price } = req.query;
-  const carsData = JSON.parse(fs.readFileSync("./data/cars.json", "utf8"));
 
-  // For each brand, filter the models based on query parameters
-  let filteredBrands = carsData.brands.map((brand) => {
-    let filteredModels = brand.models;
+// We're not handling logic directly in the routes anymore —
+// instead, we hand this off to the controller using MVC style.
+// This makes our route cleaner and keeps everything organised properly.
 
-    // Filter by year if provided
-    if (year && year.trim() !== "") {
-      filteredModels = filteredModels.filter((m) => String(m.year) === year);
-    }
-
-    // Filter by model name if provided
-    if (model && model.trim() !== "") {
-      filteredModels = filteredModels.filter((m) =>
-        m.name.toLowerCase().includes(model.toLowerCase())
-      );
-    }
-
-    // Filter by max price if provided
-    if (price && price.trim() !== "") {
-      const maxPrice = Number(price);
-      filteredModels = filteredModels.filter((m) => {
-        // Remove non-numeric characters from the price string (e.g., "$55,000" → "55000")
-        const numericPrice = Number(m.price.replace(/[^0-9.]/g, ""));
-        return numericPrice <= maxPrice;
-      });
-    }
-
-    return { ...brand, models: filteredModels };
-  });
-
-  // Only show brands with at least one model after filtering
-  filteredBrands = filteredBrands.filter((b) => b.models.length > 0);
-
-  res.render("page5", {
-    brands: filteredBrands,
-    selectedYear: year || "",
-    selectedModel: model || "",
-    selectedPrice: price || ""
-  });
-});
-
+router.get("/page5", carController.showFilteredCars);
+router.get('/page5/:brand', carController.showCarModels);
+router.get('/page5/:brand/:modelId', carController.showCarDetails);
 // -----------------------------------------
 // Page 6 Route (About Page)
 // -----------------------------------------
