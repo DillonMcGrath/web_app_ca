@@ -1,0 +1,6 @@
+<h1>Models for {{brand.name}}</h1>
+<ul>
+  {{#each brand.models}}
+    <li><a href="/page5/{{../brand.name}}/{{id}}">{{name}} ({{year}})</a></li>
+  {{/each}}
+</ul>

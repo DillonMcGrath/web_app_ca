@@ -72,7 +72,7 @@ router.post("/submit", (req, res) => {
 // instead, we hand this off to the controller using MVC style.
 // This makes our route cleaner and keeps everything organised properly.
 
-router.get("/page5", carController.showFilteredCars);
+router.get("/page5", carController.showCarBrands);
 router.get('/page5/:brand', carController.showCarModels);
 router.get('/page5/:brand/:modelId', carController.showCarDetails);
 // -----------------------------------------
